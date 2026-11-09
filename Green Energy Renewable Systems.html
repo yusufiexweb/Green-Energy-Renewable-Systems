@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6ef">
+  <meta name="description" content="NOVA333X explores a cleaner energy future through renewable systems, smart grids, and practical climate impact.">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <title>NOVA333X — Green Energy & Renewable Systems</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f5f6ef;
+      --paper-deep: #ebeee3;
+      --ink: #17241d;
+      --muted: #68756c;
+      --line: #d9dfd4;
+      --green: #27714b;
+      --lime: #c9ee67;
+      --forest: #143b2b;
+      --surface: #fff;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, "Segoe UI", Arial, sans-serif;
+      --ease: cubic-bezier(.2,.8,.2,1);
+    }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --paper: #101914;
+      --paper-deep: #19251d;
+      --ink: #edf2e8;
+      --muted: #a3b0a2;
+      --line: #2b3a2f;
+      --green: #a7d879;
+      --lime: #d0f078;
+      --forest: #14291e;
+      --surface: #18231b;
+    }
+    * { box-sizing: border-box; }
+    html { min-width: 320px; background: var(--paper); scroll-behavior: smooth; }
+    body { min-width: 320px; margin: 0; background: var(--paper); color: var(--ink); font: 14px/1.65 var(--sans); -webkit-font-smoothing: antialiased; transition: background .3s, color .3s; }
+    button, input { font: inherit; }
+    button { color: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    button:focus-visible, input:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+    ::selection { background: var(--lime); color: #17241d; }
+    .page-shell { overflow: clip; }
+    .site-header { position: relative; z-index: 4; width: min(100% - 72px, 1440px); height: 88px; margin: auto; display: flex; align-items: center; border-bottom: 1px solid var(--line); }
+    .brand { display: inline-flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; }
+    .brand-mark { width: 43px; height: 43px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--green); }
+    .brand-mark svg { width: 27px; height: 27px; }
+    .brand-wordmark { font-size: 15px; font-weight: 850; letter-spacing: .13em; line-height: 1.15; }
+    .brand-wordmark span { display: block; margin-top: 5px; color: var(--muted); font-size: 8px; font-weight: 650; letter-spacing: .19em; }
+    .header-nav { display: flex; align-items: center; gap: clamp(18px, 3vw, 42px); margin-left: auto; }
+    .nav-action, .theme-toggle, .menu-toggle { border: 0; background: none; }
+    .nav-action { padding: 8px 0; color: var(--muted); font-size: 11px; font-weight: 650; letter-spacing: .035em; transition: color .2s; }
+    .nav-action:hover { color: var(--green); }
+    .header-tools { display: flex; align-items: center; gap: 13px; margin-left: clamp(22px, 4vw, 55px); }
+    .theme-toggle { width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--ink); transition: border-color .2s, transform .2s; }
+    .theme-toggle:hover { transform: rotate(12deg); border-color: var(--green); }
+    .theme-toggle svg { width: 16px; height: 16px; }
+    .menu-toggle { width: 42px; height: 42px; display: grid; place-content: center; gap: 5px; border: 1px solid var(--line); border-radius: 50%; transition: background .2s, border-color .2s; }
+    .menu-toggle:hover { border-color: var(--green); background: var(--paper-deep); }
+    .menu-toggle span { width: 15px; height: 1px; display: block; background: var(--ink); transition: transform .25s var(--ease); }
+    .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(3px) rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-3px) rotate(-45deg); }
+    .hero { width: min(100% - 72px, 1440px); min-height: 655px; margin: auto; padding: 75px 0 52px; display: grid; grid-template-columns: minmax(0, .93fr) minmax(420px, 1.07fr); align-items: center; gap: 5.2%; }
+    .hero-copy { position: relative; z-index: 1; padding-bottom: 23px; }
+    .overline { display: flex; align-items: center; gap: 10px; margin: 0 0 27px; color: var(--green); font-size: 9px; font-weight: 760; letter-spacing: .21em; text-transform: uppercase; }
+    .overline::before { width: 24px; height: 1px; content: ""; background: currentColor; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 680px; margin-bottom: 25px; font-family: var(--serif); font-size: clamp(52px, 7.1vw, 101px); font-weight: 400; letter-spacing: -.072em; line-height: .96; }
+    h1 em { color: var(--green); font-weight: 400; }
+    .hero-intro { max-width: 430px; margin-bottom: 29px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+    .button { min-height: 46px; display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 0 19px; border: 1px solid var(--ink); border-radius: 3px; background: var(--ink); color: var(--paper); font-size: 10px; font-weight: 720; letter-spacing: .045em; transition: transform .2s var(--ease), background .2s, color .2s, border-color .2s; }
+    .button:hover { transform: translateY(-2px); background: var(--green); border-color: var(--green); color: #fff; }
+    .button svg { width: 15px; height: 15px; }
+    .button-quiet { border-color: var(--line); background: transparent; color: var(--ink); }
+    .button-quiet:hover { color: #fff; }
+    .hero-note { display: flex; align-items: center; gap: 10px; margin-top: 51px; color: var(--muted); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
+    .note-dot { width: 7px; height: 7px; border-radius: 50%; background: #71ac58; box-shadow: 0 0 0 4px color-mix(in srgb, #71ac58 14%, transparent); }
+    .hero-art { position: relative; min-height: 500px; isolation: isolate; }
+    .hero-image { position: absolute; inset: 3% 2% 5% 10%; overflow: hidden; background: #66826b; }
+    .hero-image::before { position: absolute; z-index: 1; inset: 0; content: ""; background: linear-gradient(180deg, #10271a00 30%, #10271a66 100%), linear-gradient(90deg, #1d382722, transparent 70%); }
+    .hero-image img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.77); }
+    .art-label { position: absolute; z-index: 2; top: 16px; right: 2%; color: var(--muted); font-size: 8px; font-weight: 700; letter-spacing: .18em; writing-mode: vertical-rl; }
+    .solar-stamp { position: absolute; z-index: 2; top: 12%; left: 0; width: 116px; height: 116px; display: grid; place-items: center; border-radius: 50%; background: var(--lime); color: #17241d; text-align: center; transform: rotate(-10deg); }
+    .solar-stamp strong { display: block; font-family: var(--serif); font-size: 33px; font-weight: 400; letter-spacing: -.07em; line-height: 1; }
+    .solar-stamp span { display: block; margin-top: 4px; font-size: 7px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    .hero-caption { position: absolute; z-index: 2; right: 0; bottom: 1%; display: flex; align-items: flex-start; gap: 12px; max-width: 236px; padding: 16px 18px; background: var(--surface); box-shadow: 0 15px 40px #0e24121c; }
+    .caption-mark { width: 25px; height: 25px; flex: 0 0 auto; color: var(--green); }
+    .hero-caption strong { display: block; font-size: 10px; letter-spacing: .02em; }
+    .hero-caption span { display: block; margin-top: 3px; color: var(--muted); font-size: 9px; }
+    .hero-index { position: absolute; left: 0; bottom: 0; color: var(--green); font-family: var(--serif); font-size: 14px; font-style: italic; }
+    .metrics-band { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .metrics-inner { width: min(100% - 72px, 1440px); min-height: 133px; margin: auto; display: grid; grid-template-columns: 1.1fr repeat(3, 1fr); align-items: center; }
+    .metric-intro { padding-right: 20px; color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: .15em; line-height: 1.6; text-transform: uppercase; }
+    .metric { min-height: 57px; display: flex; align-items: center; gap: 15px; padding: 0 26px; border-left: 1px solid var(--line); }
+    .metric-number { min-width: 74px; font-family: var(--serif); font-size: 35px; letter-spacing: -.07em; line-height: 1; }
+    .metric-number small { font-family: var(--sans); font-size: 13px; letter-spacing: -.01em; }
+    .metric-detail { color: var(--muted); font-size: 9px; line-height: 1.5; }
+    .metric-detail strong { display: block; margin-bottom: 3px; color: var(--ink); font-size: 9px; font-weight: 700; }
+    .section { width: min(100% - 72px, 1440px); margin: auto; padding: 112px 0; }
+    .section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; margin-bottom: 36px; }
+    .section-kicker { margin-bottom: 12px; color: var(--green); font-size: 9px; font-weight: 750; letter-spacing: .2em; text-transform: uppercase; }
+    h2 { margin-bottom: 0; font-family: var(--serif); font-size: clamp(39px, 5vw, 62px); font-weight: 400; letter-spacing: -.06em; line-height: 1.05; }
+    .section-aside { max-width: 300px; margin: 0 0 4px; color: var(--muted); font-size: 11px; line-height: 1.8; }
+    .feature-grid { display: grid; grid-template-columns: 1.18fr .82fr; gap: 18px; }
+    .feature-card { position: relative; min-height: 405px; overflow: hidden; padding: 30px; background: var(--paper-deep); }
+    .feature-card-dark { background: var(--forest); color: #f1f5e8; }
+    .feature-card h3 { max-width: 340px; margin: 13px 0 13px; font-family: var(--serif); font-size: 37px; font-weight: 400; letter-spacing: -.055em; line-height: 1.08; }
+    .feature-card p { max-width: 315px; margin-bottom: 18px; color: var(--muted); font-size: 11px; line-height: 1.8; }
+    .feature-card-dark p { color: #b7c8b7; }
+    .card-label { color: var(--green); font-size: 8px; font-weight: 750; letter-spacing: .19em; text-transform: uppercase; }
+    .feature-card-dark .card-label { color: var(--lime); }
+    .text-link { display: inline-flex; align-items: center; gap: 8px; padding: 7px 0; border: 0; border-bottom: 1px solid currentColor; background: none; color: var(--ink); font-size: 9px; font-weight: 750; letter-spacing: .06em; }
+    .feature-card-dark .text-link { color: var(--lime); }
+    .text-link svg { width: 13px; height: 13px; transition: transform .2s; }
+    .text-link:hover svg { transform: translateX(4px); }
+    .carbon-visual { position: absolute; right: -15px; bottom: -73px; width: 56%; max-width: 340px; opacity: .9; }
+    .carbon-visual svg { width: 100%; }
+    .carbon-orbit { transform-origin: 50% 50%; animation: orbit 28s linear infinite; }
+    .grid-visual { position: absolute; right: 0; bottom: 0; width: 100%; height: 44%; opacity: .8; }
+    .grid-visual path { stroke-dasharray: 6 8; animation: dash 16s linear infinite; }
+    .feature-aside { display: grid; grid-template-rows: 1fr auto; gap: 18px; }
+    .solar-card { min-height: 240px; padding: 27px; background: var(--surface); border: 1px solid var(--line); }
+    .solar-card h3 { max-width: 230px; font-size: 30px; }
+    .solar-spark { position: absolute; right: 24px; bottom: 20px; width: 42%; height: 64px; color: var(--green); }
+    .spark-area { fill: color-mix(in srgb, var(--green) 12%, transparent); }
+    .spark-line { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-dasharray: 350; stroke-dashoffset: 350; animation: drawline 2s .35s var(--ease) forwards; }
+    .quote-card { min-height: 148px; padding: 22px 25px; display: flex; align-items: flex-start; gap: 20px; border-top: 1px solid var(--line); }
+    .quote-symbol { color: var(--green); font-family: var(--serif); font-size: 47px; line-height: .9; }
+    .quote-card blockquote { margin: 0; font-family: var(--serif); font-size: 17px; line-height: 1.35; }
+    .quote-card cite { display: block; margin-top: 12px; color: var(--muted); font-family: var(--sans); font-size: 8px; font-style: normal; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
+    .map-section { width: 100%; padding: 100px max(36px, calc((100% - 1440px)/2)); background: var(--paper-deep); }
+    .map-layout { display: grid; grid-template-columns: .72fr 1.28fr; align-items: center; gap: 6%; }
+    .map-copy h2 { max-width: 430px; margin-bottom: 20px; }
+    .map-copy > p:not(.section-kicker) { max-width: 370px; margin-bottom: 26px; color: var(--muted); font-size: 12px; line-height: 1.8; }
+    .map-legend { display: grid; gap: 12px; margin-top: 28px; color: var(--muted); font-size: 9px; }
+    .legend-item { display: flex; align-items: center; gap: 9px; }
+    .legend-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px color-mix(in srgb, var(--green) 16%, transparent); }
+    .legend-dot.wind { background: #b7c951; box-shadow: 0 0 0 4px #b7c95126; }
+    .legend-dot.storage { background: #dc9760; box-shadow: 0 0 0 4px #dc976026; }
+    .ecosystem-map { position: relative; min-height: 450px; overflow: hidden; border: 1px solid color-mix(in srgb, var(--green) 20%, var(--line)); background: var(--paper); }
+    .ecosystem-map::before, .ecosystem-map::after { position: absolute; inset: 0; content: ""; pointer-events: none; }
+    .ecosystem-map::before { background-image: linear-gradient(color-mix(in srgb, var(--green) 8%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--green) 8%, transparent) 1px, transparent 1px); background-size: 42px 42px; mask-image: linear-gradient(135deg, #000 10%, transparent 90%); }
+    .ecosystem-map::after { background: radial-gradient(ellipse at 48% 48%, color-mix(in srgb, var(--green) 10%, transparent), transparent 58%); }
+    .map-svg { position: absolute; inset: 2%; width: 96%; height: 96%; }
+    .map-route { fill: none; stroke: var(--green); stroke-width: 1.25; stroke-dasharray: 5 7; opacity: .56; animation: dash 20s linear infinite; }
+    .map-contour { fill: none; stroke: color-mix(in srgb, var(--green) 25%, transparent); stroke-width: 1; }
+    .map-node { position: absolute; z-index: 2; width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid var(--green); border-radius: 50%; background: var(--paper); color: var(--green); transition: transform .2s, background .2s, color .2s; }
+    .map-node:hover { z-index: 3; transform: scale(1.13); background: var(--green); color: white; }
+    .map-node svg { width: 15px; height: 15px; }
+    .map-node.solar { top: 30%; left: 28%; }
+    .map-node.wind { top: 21%; right: 25%; }
+    .map-node.grid { top: 53%; left: 49%; }
+    .map-node.storage { right: 24%; bottom: 18%; }
+    .map-coord { position: absolute; z-index: 1; color: var(--muted); font-size: 7px; font-weight: 700; letter-spacing: .13em; }
+    .map-coord.top { top: 15px; left: 16px; }
+    .map-coord.bottom { right: 15px; bottom: 13px; }
+    .map-float { position: absolute; z-index: 2; left: 18px; bottom: 18px; padding: 9px 12px; background: var(--surface); box-shadow: 0 8px 20px #0000000c; }
+    .map-float strong { display: block; font-family: var(--serif); font-size: 20px; font-weight: 400; line-height: 1; }
+    .map-float span { display: block; margin-top: 4px; color: var(--muted); font-size: 7px; letter-spacing: .08em; text-transform: uppercase; }
+    .data-section { display: grid; grid-template-columns: .82fr 1.18fr; gap: 8%; align-items: center; }
+    .data-copy h2 { max-width: 400px; margin-bottom: 20px; }
+    .data-copy > p:not(.section-kicker) { max-width: 365px; color: var(--muted); font-size: 12px; line-height: 1.8; }
+    .chart-card { padding: 27px 30px 22px; border: 1px solid var(--line); background: var(--surface); }
+    .chart-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+    .chart-top span { color: var(--muted); font-size: 8px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    .chart-total { margin-top: 8px; font-family: var(--serif); font-size: 35px; letter-spacing: -.06em; line-height: 1; }
+    .chart-delta { margin-top: 7px; color: var(--green); font-size: 8px; font-weight: 720; }
+    .chart-range { padding: 6px 9px; border: 1px solid var(--line); color: var(--muted); font-size: 8px; }
+    .chart { width: 100%; height: 210px; margin-top: 15px; overflow: visible; }
+    .chart-gridline { stroke: var(--line); stroke-width: 1; stroke-dasharray: 2 6; }
+    .chart-line { fill: none; stroke: var(--green); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1100; stroke-dashoffset: 1100; animation: drawline 2.2s .2s var(--ease) forwards; }
+    .chart-fill { fill: url(#chartFill); }
+    .chart-point { fill: var(--paper); stroke: var(--green); stroke-width: 2; }
+    .chart-labels { display: flex; justify-content: space-between; color: var(--muted); font-size: 7px; letter-spacing: .07em; }
+    .story-section { padding-top: 16px; }
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 17px; }
+    .story-card { min-height: 335px; display: flex; flex-direction: column; padding: 24px; border-top: 1px solid var(--ink); transition: background .25s, transform .25s; }
+    .story-card[hidden] { display: none; }
+    .story-card:hover { transform: translateY(-4px); background: var(--paper-deep); }
+    .story-number { color: var(--green); font-family: var(--serif); font-size: 13px; font-style: italic; }
+    .story-card h3 { max-width: 280px; margin: 44px 0 11px; font-family: var(--serif); font-size: 27px; font-weight: 400; letter-spacing: -.045em; line-height: 1.14; }
+    .story-card p { color: var(--muted); font-size: 10px; line-height: 1.8; }
+    .story-card .text-link { align-self: flex-start; margin-top: auto; }
+    .closing { position: relative; min-height: 350px; display: flex; align-items: center; overflow: hidden; padding: 56px max(36px, calc((100% - 1440px)/2)); background: var(--forest); color: #f0f3e8; }
+    .closing::after { position: absolute; top: -50%; right: -4%; width: 570px; height: 570px; border: 1px solid #d5ef8860; border-radius: 50%; box-shadow: 0 0 0 54px #d5ef8813, 0 0 0 108px #d5ef880c; content: ""; }
+    .closing-copy { position: relative; z-index: 1; max-width: 670px; }
+    .closing .section-kicker { color: var(--lime); }
+    .closing h2 { margin-bottom: 15px; font-size: clamp(42px, 6vw, 70px); }
+    .closing p:not(.section-kicker) { max-width: 430px; margin-bottom: 24px; color: #b7c8b7; font-size: 11px; }
+    .closing .button { border-color: var(--lime); background: var(--lime); color: #17241d; }
+    .closing .button:hover { border-color: #eef7ce; background: #eef7ce; }
+    .site-footer { width: min(100% - 72px, 1440px); min-height: 94px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 8px; font-weight: 650; letter-spacing: .12em; text-transform: uppercase; }
+    .footer-brand { color: var(--ink); font-weight: 850; letter-spacing: .14em; }
+    .footer-socials { display: flex; align-items: center; gap: 9px; }
+    .footer-socials a { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--muted); transition: color .2s, border-color .2s, transform .2s; }
+    .footer-socials a:hover { transform: translateY(-2px); border-color: var(--green); color: var(--green); }
+    .footer-socials svg { width: 15px; height: 15px; fill: currentColor; }
+    .search-row { width: min(100% - 72px, 1440px); margin: 20px auto -37px; display: flex; justify-content: flex-end; }
+    .search-box { position: relative; width: min(100%, 240px); }
+    .search-box svg { position: absolute; top: 11px; left: 11px; width: 14px; height: 14px; color: var(--muted); }
+    .search-box input { width: 100%; height: 36px; padding: 0 12px 0 32px; border: 1px solid var(--line); border-radius: 2px; background: var(--surface); color: var(--ink); font-size: 9px; }
+    .search-box input::placeholder { color: var(--muted); }
+    .search-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+    .overlay { position: fixed; z-index: 20; inset: 0; visibility: hidden; background: #0c180f80; opacity: 0; transition: opacity .3s, visibility .3s; }
+    .overlay.open { visibility: visible; opacity: 1; }
+    .drawer { position: fixed; z-index: 21; inset: 0 0 0 auto; width: min(470px, 100%); display: flex; flex-direction: column; padding: 32px clamp(24px, 5vw, 48px); background: var(--paper); box-shadow: -25px 0 80px #0b1c1340; transform: translateX(103%); transition: transform .42s var(--ease); }
+    .drawer.open { transform: translateX(0); }
+    .drawer-top { display: flex; align-items: center; justify-content: space-between; padding-bottom: 21px; border-bottom: 1px solid var(--line); }
+    .drawer-eyebrow { color: var(--green); font-size: 8px; font-weight: 750; letter-spacing: .18em; text-transform: uppercase; }
+    .drawer-close { width: 37px; height: 37px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: transparent; transition: transform .2s, border-color .2s; }
+    .drawer-close:hover { transform: rotate(90deg); border-color: var(--green); }
+    .drawer-close svg { width: 15px; height: 15px; }
+    .drawer-content { flex: 1; overflow-y: auto; padding: 39px 2px 25px 0; }
+    .drawer-content h2 { margin-bottom: 18px; font-size: clamp(38px, 8vw, 54px); }
+    .drawer-content p { color: var(--muted); font-size: 12px; line-height: 1.8; }
+    .drawer-content .panel-kicker { margin-bottom: 10px; color: var(--green); font-size: 8px; font-weight: 760; letter-spacing: .18em; text-transform: uppercase; }
+    .drawer-stat { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 28px 0; }
+    .drawer-stat div { padding: 17px; background: var(--paper-deep); }
+    .drawer-stat strong { display: block; font-family: var(--serif); font-size: 29px; font-weight: 400; letter-spacing: -.05em; }
+    .drawer-stat span { display: block; margin-top: 4px; color: var(--muted); font-size: 8px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .drawer-list { display: grid; gap: 0; margin: 24px 0; padding: 0; list-style: none; }
+    .drawer-list li { padding: 13px 0; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 10px; }
+    .drawer-list strong { display: block; margin-bottom: 3px; color: var(--ink); font-size: 10px; }
+    .drawer-foot { padding-top: 19px; border-top: 1px solid var(--line); color: var(--muted); font-size: 8px; letter-spacing: .1em; text-transform: uppercase; }
+    .menu-links { display: grid; gap: 0; margin-top: 20px; }
+    .menu-links button { display: flex; align-items: center; justify-content: space-between; padding: 19px 0; border: 0; border-bottom: 1px solid var(--line); background: transparent; font-family: var(--serif); font-size: 25px; text-align: left; }
+    .menu-links button span { color: var(--green); font-family: var(--sans); font-size: 12px; }
+    .preloader { position: fixed; z-index: 50; inset: 0; display: grid; place-items: center; background: var(--forest); color: #eff5e7; transition: opacity .6s var(--ease), visibility .6s; }
+    .preloader.done { visibility: hidden; opacity: 0; }
+    .loader-lockup { display: grid; justify-items: center; gap: 15px; }
+    .loader-emblem { width: 58px; height: 58px; color: var(--lime); animation: turbine 2.3s linear infinite; }
+    .loader-word { font-size: 10px; font-weight: 800; letter-spacing: .23em; }
+    .loader-word small { display: block; margin-top: 6px; color: #b7c8b7; font-size: 7px; font-weight: 650; text-align: center; }
+    @keyframes orbit { to { transform: rotate(360deg); } }
+    @keyframes dash { to { stroke-dashoffset: -200; } }
+    @keyframes drawline { to { stroke-dashoffset: 0; } }
+    @keyframes turbine { to { transform: rotate(360deg); } }
+    @media (max-width: 900px) {
+      .site-header, .hero, .metrics-inner, .section, .site-footer, .search-row { width: min(100% - 44px, 1440px); }
+      .header-nav { gap: 17px; }
+      .header-nav .nav-action { font-size: 9px; }
+      .header-tools { margin-left: 19px; }
+      .hero { min-height: 590px; grid-template-columns: 1fr 1fr; gap: 3%; }
+      .hero-art { min-height: 420px; }
+      .solar-stamp { width: 93px; height: 93px; }
+      .metrics-inner { grid-template-columns: .85fr repeat(3, 1fr); }
+      .metric { gap: 9px; padding: 0 13px; }
+      .metric-number { min-width: 62px; font-size: 29px; }
+      .map-section { padding-right: 22px; padding-left: 22px; }
+      .map-layout { grid-template-columns: .8fr 1.2fr; gap: 4%; }
+      .ecosystem-map { min-height: 390px; }
+      .data-section { gap: 4%; }
+    }
+    @media (max-width: 680px) {
+      .site-header, .hero, .metrics-inner, .section, .site-footer, .search-row { width: calc(100% - 40px); }
+      .site-header { height: 72px; }
+      .brand-mark { width: 37px; height: 37px; }
+      .brand-wordmark { font-size: 13px; }
+      .header-nav { display: none; }
+      .header-tools { margin-left: auto; }
+      .theme-toggle { width: 34px; height: 34px; }
+      .menu-toggle { width: 38px; height: 38px; }
+      .hero { min-height: auto; padding: 66px 0 38px; grid-template-columns: 1fr; gap: 30px; }
+      .hero-copy { padding-bottom: 0; }
+      h1 { max-width: 520px; font-size: clamp(55px, 15vw, 79px); }
+      .hero-intro { max-width: 420px; font-size: 12px; }
+      .hero-note { margin-top: 29px; }
+      .hero-art { min-height: min(112vw, 440px); margin: 0 4px 11px 0; }
+      .hero-image { inset: 2% 4% 5% 8%; }
+      .solar-stamp { top: 7%; left: 0; }
+      .hero-caption { right: 0; bottom: 0; }
+      .metrics-inner { grid-template-columns: 1fr 1fr; padding: 18px 0; }
+      .metric-intro { grid-column: span 2; padding: 3px 0 14px; }
+      .metric { min-height: 67px; padding: 10px 8px; }
+      .metric:nth-child(2) { border-left: 0; }
+      .metric:nth-child(4) { grid-column: 1 / -1; border-top: 1px solid var(--line); border-left: 0; }
+      .metric-number { min-width: 65px; font-size: 29px; }
+      .search-row { margin-top: 17px; margin-bottom: -20px; }
+      .section { padding: 76px 0; }
+      .section-head { align-items: flex-start; flex-direction: column; gap: 16px; margin-bottom: 25px; }
+      .section-aside { max-width: 400px; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .feature-card { min-height: 370px; padding: 24px; }
+      .feature-card h3 { font-size: 33px; }
+      .feature-aside { grid-template-rows: auto auto; }
+      .solar-card { min-height: 230px; padding: 24px; }
+      .quote-card { min-height: 130px; }
+      .map-section { padding: 75px 20px; }
+      .map-layout { grid-template-columns: 1fr; gap: 27px; }
+      .map-copy h2 { max-width: 400px; }
+      .map-legend { grid-template-columns: 1fr 1fr; }
+      .ecosystem-map { min-height: min(105vw, 420px); }
+      .data-section { grid-template-columns: 1fr; gap: 27px; }
+      .chart-card { padding: 21px 17px; }
+      .chart { height: 175px; }
+      .story-section { padding-top: 0; }
+      .story-grid { grid-template-columns: 1fr; gap: 8px; }
+      .story-card { min-height: 265px; padding: 20px 4px; }
+      .story-card h3 { margin-top: 30px; }
+      .closing { min-height: 325px; padding: 52px 20px; }
+      .closing::after { right: -65%; }
+      .site-footer { min-height: 82px; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding: 18px 0; font-size: 7px; }
+      .footer-socials { order: 3; width: 100%; }
+      .drawer { padding-top: 23px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="preloader" id="preloader" aria-label="Loading NOVA333X renewable systems">
+    <div class="loader-lockup">
+      <svg class="loader-emblem" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <circle cx="32" cy="32" r="27" stroke="currentColor" stroke-opacity=".35"/>
+        <path d="M32 48C19 42 17 26 34 14c8 10 10 24-2 34Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+        <path d="M31 45c0-10 3-17 10-23M31 37l-8-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="32" r="3" fill="currentColor"/>
+      </svg>
+      <div class="loader-word">NOVA333X<small>POWERING WHAT'S NEXT</small></div>
+    </div>
+  </div>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="All%20Projects.html" aria-label="NOVA333X portfolio home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="16.5" stroke="currentColor" stroke-width="1.2" opacity=".4"/>
+            <path d="M20 31C11 27 10 16 22 8c6 7 7 16-2 23Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+            <path d="M19.5 28c0-7 2-12 7-16M19 23l-5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand-wordmark">NOVA333X<span>RENEWABLE SYSTEMS</span></span>
+      </a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <button class="nav-action" type="button" data-panel="carbon">Our impact</button>
+        <button class="nav-action" type="button" data-panel="grid">The grid</button>
+        <button class="nav-action" type="button" data-panel="cases">Field notes</button>
+      </nav>
+      <div class="header-tools">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme" title="Toggle light and dark theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+        </button>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="heroTitle">
+        <div class="hero-copy">
+          <p class="overline">Energy, in better balance</p>
+          <h1 id="heroTitle">A brighter<br>kind of <em>power.</em></h1>
+          <p class="hero-intro">The next energy system isn't one technology. It's a living network—cleaner generation, smarter storage, and communities at the center.</p>
+          <div class="hero-actions">
+            <button class="button" type="button" data-panel="solar">Explore the energy mix <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5"/></svg></button>
+            <button class="button button-quiet" type="button" data-panel="cases">Read the field notes</button>
+          </div>
+          <div class="hero-note"><span class="note-dot"></span>Built for a net-positive tomorrow</div>
+        </div>
+        <div class="hero-art" aria-label="Solar panels and wind turbines in a green landscape">
+          <span class="art-label">FIELD STUDY 01 — THE NEW LANDSCAPE</span>
+          <div class="hero-image"><img src="renewable-energy-technology-defined-solar-panels.jpg" alt="Solar panels and wind turbines producing clean energy" fetchpriority="high"></div>
+          <div class="solar-stamp"><div><strong>24/7</strong><span>clean energy<br>in motion</span></div></div>
+          <div class="hero-caption">
+            <svg class="caption-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 27C5 22 7 10 21 5c5 9 2 17-5 22Z" stroke="currentColor" stroke-width="1.6"/><path d="M15 24c1-7 4-11 9-15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            <div><strong>Nature &amp; engineering</strong><span>Designed to work in concert.</span></div>
+          </div>
+          <span class="hero-index">01 / 04</span>
+        </div>
+      </section>
+      <div class="metrics-band" aria-label="Illustrative clean energy impact metrics">
+        <div class="metrics-inner">
+          <div class="metric-intro">A transition<br>you can measure</div>
+          <div class="metric"><div class="metric-number"><span data-count="68">0</span><small>%</small></div><div class="metric-detail"><strong>Renewable share</strong>illustrative regional mix</div></div>
+          <div class="metric"><div class="metric-number"><span data-count="42">0</span><small>k</small></div><div class="metric-detail"><strong>tCO₂ avoided</strong>annual equivalent</div></div>
+          <div class="metric"><div class="metric-number"><span data-count="3">0</span><small>.8 GW</small></div><div class="metric-detail"><strong>Flexible capacity</strong>generation + storage</div></div>
+        </div>
+      </div>
+      <div class="search-row">
+        <label class="search-box">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg>
+          <input id="storySearch" type="search" maxlength="64" autocomplete="off" placeholder="Search the energy atlas" aria-label="Search energy topics">
+          <span class="search-status" id="searchStatus" aria-live="polite"></span>
+        </label>
+      </div>
+      <section class="section" id="impact" aria-labelledby="impactTitle">
+        <div class="section-head">
+          <div><p class="section-kicker">The bigger picture / 01</p><h2 id="impactTitle">Good energy.<br>Lasting impact.</h2></div>
+          <p class="section-aside">Progress is more than megawatts. It means cleaner air, resilient places, and the confidence to move forward together.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card feature-card-dark">
+            <span class="card-label">Impact ledger / 2026 outlook</span>
+            <h3>Less carbon.<br>More possibility.</h3>
+            <p>See how thoughtfully designed renewable portfolios can change the carbon story—one measured step at a time.</p>
+            <button class="text-link" type="button" data-panel="carbon">Open the impact ledger <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5"/></svg></button>
+            <div class="carbon-visual" aria-hidden="true">
+              <svg viewBox="0 0 300 300" fill="none">
+                <circle cx="150" cy="150" r="126" stroke="#d3ef83" stroke-opacity=".24"/>
+                <circle class="carbon-orbit" cx="150" cy="150" r="96" stroke="#d3ef83" stroke-opacity=".45" stroke-dasharray="2 8"/>
+                <circle cx="150" cy="150" r="63" stroke="#d3ef83" stroke-opacity=".7"/>
+                <path d="M150 196c-39-20-32-66 17-99 22 35 10 75-17 99Z" stroke="#d3ef83" stroke-width="2"/>
+                <path d="M147 185c5-28 17-49 39-66m-42 47-20-21" stroke="#d3ef83" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="150" cy="150" r="4" fill="#d3ef83"/>
+              </svg>
+            </div>
+          </article>
+          <div class="feature-aside">
+            <article class="feature-card solar-card">
+              <span class="card-label">Sunlight / made useful</span>
+              <h3>Every roof has a story.</h3>
+              <p>Explore a practical solar production model built around real-world variables.</p>
+              <button class="text-link" type="button" data-panel="solar">View solar report <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5"/></svg></button>
+              <svg class="solar-spark" viewBox="0 0 210 70" preserveAspectRatio="none" aria-hidden="true"><path class="spark-area" d="M0 62 28 54 50 58 79 31 102 39 130 17 156 26 184 7 210 10V70H0Z"/><path class="spark-line" d="M0 62 28 54 50 58 79 31 102 39 130 17 156 26 184 7 210 10"/></svg>
+            </article>
+            <div class="quote-card"><span class="quote-symbol">“</span><blockquote>Clean power is a system we shape together.<cite>Energy transition / shared by design</cite></blockquote></div>
+          </div>
+        </div>
+      </section>
+      <section class="map-section" id="ecosystem" aria-labelledby="mapTitle">
+        <div class="map-layout">
+          <div class="map-copy">
+            <p class="section-kicker">The living network / 02</p>
+            <h2 id="mapTitle">Every source connected.</h2>
+            <p>Tap a node to explore how generation, storage, and smart infrastructure work as one adaptable ecosystem.</p>
+            <button class="button button-quiet" type="button" data-panel="grid">Explore smart grid metrics <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5"/></svg></button>
+            <div class="map-legend" aria-label="Map legend">
+              <span class="legend-item"><i class="legend-dot"></i>Solar generation</span>
+              <span class="legend-item"><i class="legend-dot wind"></i>Wind generation</span>
+              <span class="legend-item"><i class="legend-dot storage"></i>Flexible storage</span>
+            </div>
+          </div>
+          <div class="ecosystem-map" role="group" aria-label="Interactive clean energy ecosystem map">
+            <span class="map-coord top">NOVA ENERGY ATLAS / 42° N</span>
+            <svg class="map-svg" viewBox="0 0 700 430" fill="none" aria-hidden="true">
+              <path class="map-contour" d="M80 114c49-43 92-41 133-21 34 17 67 15 96-5 32-22 60-10 85 10 33 27 72 22 105 0 38-25 79-18 113 10"/>
+              <path class="map-contour" d="M51 148c54-39 97-33 142-12 38 18 68 13 105-9 29-17 54-5 80 14 35 25 78 21 115-2 40-25 79-17 114 8"/>
+              <path class="map-contour" d="M67 184c45-28 91-25 132-7 43 19 75 13 112-8 29-17 50-7 78 12 38 26 80 21 117-2 39-24 76-16 111 8"/>
+              <path class="map-contour" d="M104 228c44-21 81-17 120-1 48 20 83 11 116-9 33-20 53-11 81 8 38 26 76 22 111 1 36-21 69-15 97 4"/>
+              <path class="map-contour" d="M115 275c39-15 76-12 111 1 46 17 79 10 113-7 32-16 51-9 80 6 37 19 69 17 103 0 36-18 68-13 96 4"/>
+              <path class="map-route" d="M206 147C259 183 293 222 350 231s93-47 145-63"/>
+              <path class="map-route" d="M350 231c-19 48-25 83-1 120 32 4 73-3 110 17"/>
+              <path class="map-route" d="M350 231c-48-18-88-40-144-84"/>
+              <circle cx="350" cy="231" r="65" stroke="#4f8555" stroke-opacity=".16"/><circle cx="350" cy="231" r="93" stroke="#4f8555" stroke-opacity=".1"/>
+              <circle cx="350" cy="231" r="4" fill="#4f8555"/>
+            </svg>
+            <button class="map-node solar" type="button" aria-label="Explore solar generation" data-panel="solar"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10" cy="10" r="3"/><path d="M10 1v3m0 12v3M1 10h3m12 0h3m-15.4-6.4 2.1 2.1m10.6 10.6 2.1 2.1m0-14.8-2.1 2.1M5.6 14.4l-2.1 2.1"/></svg></button>
+            <button class="map-node wind" type="button" aria-label="Explore wind generation" data-panel="wind"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M10 9v9m0-9L5 3m5 6 7-2M10 9l-5 8"/><circle cx="10" cy="9" r="1.4"/></svg></button>
+            <button class="map-node grid" type="button" aria-label="Explore smart grid metrics" data-panel="grid"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="m11 1-7 10h5l-1 8 8-11h-5l1-7Z"/></svg></button>
+            <button class="map-node storage" type="button" aria-label="Explore energy storage" data-panel="storage"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="13" height="11" rx="1"/><path d="M16 8h2v5h-2M10 7l-3 4h3l-1 3 4-5h-3l1-2"/></svg></button>
+            <div class="map-float"><strong>01 — 04</strong><span>Explore connected systems</span></div>
+            <span class="map-coord bottom">LIVE SYSTEMS / REPRESENTATIVE MODEL</span>
+          </div>
+        </div>
+      </section>
+      <section class="section data-section" id="outlook" aria-labelledby="dataTitle">
+        <div class="data-copy">
+          <p class="section-kicker">Signals of change / 03</p>
+          <h2 id="dataTitle">A cleaner curve, by design.</h2>
+          <p>Illustrative grid data shows how diversified renewable generation can reduce emissions while keeping energy available when people need it.</p>
+          <button class="text-link" type="button" data-panel="grid">Understand the metrics <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5"/></svg></button>
+        </div>
+        <div class="chart-card" aria-label="Illustrative annual emissions reduction chart">
+          <div class="chart-top">
+            <div><span>Grid emissions intensity</span><div class="chart-total"><span data-count="38">0</span><small> %</small></div><div class="chart-delta">↓ illustrative reduction since baseline</div></div>
+            <span class="chart-range">2022 — 2026</span>
+          </div>
+          <svg class="chart" viewBox="0 0 600 220" role="img" aria-label="Line chart trending downward from 2022 through 2026">
+            <defs><linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#6e9b55" stop-opacity=".24"/><stop offset="1" stop-color="#6e9b55" stop-opacity="0"/></linearGradient></defs>
+            <path class="chart-gridline" d="M0 35H600M0 85H600M0 135H600M0 185H600"/>
+            <path class="chart-fill" d="M0 42 78 53 150 49 222 88 300 95 372 122 447 116 518 160 600 178V210H0Z"/>
+            <path class="chart-line" d="M0 42 78 53 150 49 222 88 300 95 372 122 447 116 518 160 600 178"/>
+            <circle class="chart-point" cx="600" cy="178" r="5"/>
+          </svg>
+          <div class="chart-labels"><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span></div>
+        </div>
+      </section>
+      <section class="section story-section" id="stories" aria-labelledby="storiesTitle">
+        <div class="section-head">
+          <div><p class="section-kicker">From the field / 04</p><h2 id="storiesTitle">Systems made tangible.</h2></div>
+          <p class="section-aside">Explore the decisions and partnerships that turn clean-tech ambition into everyday infrastructure.</p>
+        </div>
+        <div class="story-grid">
+          <article class="story-card" data-searchable="community solar neighborhood shared power rooftop access">
+            <span class="story-number">01 / Community solar</span><h3>Make the rooftop bigger than itself.</h3>
+            <p>Shared solar can open the door to clean energy for households that don't own a suitable roof.</p>
+            <button class="text-link" type="button" data-panel="solar">Explore the model <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5"/></svg></button>
+          </article>
+          <article class="story-card" data-searchable="smart grid demand flexibility resilience storage network">
+            <span class="story-number">02 / Grid intelligence</span><h3>Let flexibility do the heavy lifting.</h3>
+            <p>Responsive networks bring supply and demand into a closer, more resilient relationship.</p>
+            <button class="text-link" type="button" data-panel="grid">Read the grid brief <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5"/></svg></button>
+          </article>
+          <article class="story-card" data-searchable="enterprise business clean technology case studies procurement">
+            <span class="story-number">03 / Better business</span><h3>Build a business case for better.</h3>
+            <p>From first assessment to long-term performance, make sustainability measurable and useful.</p>
+            <button class="text-link" type="button" data-panel="cases">View clean-tech cases <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5"/></svg></button>
+          </article>
+        </div>
+      </section>
+      <section class="closing">
+        <div class="closing-copy">
+          <p class="section-kicker">The next chapter starts here</p>
+          <h2>Let's make good energy inevitable.</h2>
+          <p>Explore a clean-energy approach built on practical action, connected systems, and outcomes that matter.</p>
+          <button class="button" type="button" data-panel="cases">Discover the case studies <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5"/></svg></button>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <span class="footer-brand">NOVA333X</span>
+      <span>Clean energy. Clear direction. Better futures.</span>
+      <nav class="footer-socials" aria-label="Social profiles">
+        <a href="https://www.upwork.com" target="_blank" rel="noopener noreferrer" aria-label="Upwork profile" title="Upwork">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.3 7.1c-1.95 0-3.42 1.22-4.18 3.12-.78-1.16-1.38-2.45-1.75-3.9H8.55v5.02c0 1.08-.88 1.96-1.96 1.96s-1.96-.88-1.96-1.96V6.32H1.95v5.02a4.64 4.64 0 0 0 8.98 1.62c.6.82 1.28 1.58 2.06 2.22l-1.4 6.5h2.75l1.07-4.95c.59.19 1.2.29 1.83.29 2.74 0 4.82-2.03 4.82-4.83 0-2.92-2.04-5.09-4.76-5.09Zm-.02 7.5c-.56 0-1.1-.14-1.62-.42l.48-2.23c.33-1.53.85-2.34 1.68-2.34.95 0 1.58 1 1.58 2.5 0 1.5-.83 2.49-2.12 2.49Z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" title="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3.4a2.1 2.1 0 1 1 0 4.2 2.1 2.1 0 0 1 0-4.2ZM3.4 9h3.7v11.6H3.4V9Zm5.9 0h3.5v1.6h.05A3.85 3.85 0 0 1 16.3 8.7c3.8 0 4.5 2.5 4.5 5.7v6.2h-3.7v-5.5c0-1.3-.02-3-1.85-3-1.85 0-2.13 1.45-2.13 2.9v5.6H9.3V9Z"/></svg>
+        </a>
+        <a href="https://github.com/yusufiexweb" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" title="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .9a11.2 11.2 0 0 0-3.54 21.83c.56.1.76-.24.76-.54v-2.1c-3.1.68-3.76-1.32-3.76-1.32-.5-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.73 1.16 1.73 1.16 1 .1.76.09 2.45 1.56.9.15 1.85-.1 2.45-.37.1-.72.4-1.2.72-1.48-2.48-.28-5.08-1.24-5.08-5.52 0-1.22.44-2.22 1.16-3-.12-.28-.5-1.43.1-2.97 0 0 .95-.3 3.08 1.15a10.7 10.7 0 0 1 5.6 0c2.13-1.45 3.08-1.15 3.08-1.15.6 1.54.22 2.69.1 2.97.72.78 1.16 1.78 1.16 3 0 4.3-2.6 5.23-5.1 5.5.4.35.76 1.03.76 2.08v3.08c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .9Z"/></svg>
+        </a>
+      </nav>
+      <span>© 2026 / Energy atlas</span>
+    </footer>
+  </div>
+  <div class="overlay" id="overlay" aria-hidden="true"></div>
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" aria-hidden="true">
+    <div class="drawer-top"><span class="drawer-eyebrow" id="drawerEyebrow">NOVA333X / Energy atlas</span><button class="drawer-close" id="drawerClose" type="button" aria-label="Close panel"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg></button></div>
+    <div class="drawer-content" id="drawerContent"></div>
+    <div class="drawer-foot">NOVA333X / A cleaner system, together</div>
+  </aside>
+  <template id="panel-carbon">
+    <p class="panel-kicker">Live carbon offsets / impact ledger</p><h2 id="drawerTitle">Measure the<br>difference.</h2><p>Carbon impact is strongest when it starts with avoided emissions. This illustrative ledger traces the value of renewable generation and efficiency across a connected portfolio.</p>
+    <div class="drawer-stat"><div><strong>42.6k</strong><span>tCO₂e avoided / year</span></div><div><strong>68%</strong><span>renewable supply mix</span></div></div>
+    <ul class="drawer-list"><li><strong>Generation displacement</strong>Clean electricity replacing higher-carbon grid supply.</li><li><strong>Transparent accounting</strong>Impact figures are illustrative, not verified project claims.</li><li><strong>Long-view outcomes</strong>Track progress against a clearly defined baseline.</li></ul>
+  </template>
+  <template id="panel-grid">
+    <p class="panel-kicker">Smart grid metrics / system brief</p><h2 id="drawerTitle">A grid that<br>thinks ahead.</h2><p>A modern grid connects distributed generation, flexible demand, and storage—making the whole network more responsive as energy needs change.</p>
+    <div class="drawer-stat"><div><strong>99.2%</strong><span>modeled availability</span></div><div><strong>−18%</strong><span>peak demand / scenario</span></div></div>
+    <ul class="drawer-list"><li><strong>Balance in real time</strong>Forecast renewable supply and shifting demand.</li><li><strong>Connect local resources</strong>Bring community energy and flexible assets into view.</li><li><strong>Keep the system resilient</strong>Use storage and controls to respond to variability.</li></ul>
+  </template>
+  <template id="panel-solar">
+    <p class="panel-kicker">Solar output reports / generation note</p><h2 id="drawerTitle">Sunlight,<br>made useful.</h2><p>Solar output depends on location, orientation, shading, weather, and system design. This indicative report is a starting point for a more detailed site assessment.</p>
+    <div class="drawer-stat"><div><strong id="solarOutput">4.8 MWh</strong><span>modeled annual output</span></div><div><strong>1.9 t</strong><span>CO₂e avoided / estimate</span></div></div>
+    <ul class="drawer-list"><li><strong>Generation profile</strong>Most output arrives during daylight hours and varies by season.</li><li><strong>Designed for your place</strong>Roof angle, local irradiance, and shading all matter.</li><li><strong>Estimate, not a quote</strong>Real system sizing requires site-specific data.</li></ul>
+    <label for="solarSize" style="display:block;margin:20px 0 8px;color:var(--muted);font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">System size · <output id="solarSizeValue">4</output> kW</label><input id="solarSize" type="range" min="2" max="12" step="1" value="4" style="width:100%;accent-color:var(--green)">
+  </template>
+  <template id="panel-wind">
+    <p class="panel-kicker">Wind generation / field note</p><h2 id="drawerTitle">Power in<br>the moving air.</h2><p>Wind resources complement solar by producing across a different daily and seasonal profile. Thoughtful siting supports both reliable output and local stewardship.</p>
+    <div class="drawer-stat"><div><strong>35–50%</strong><span>illustrative capacity factor</span></div><div><strong>24/7</strong><span>resource monitoring</span></div></div>
+    <ul class="drawer-list"><li><strong>Read the landscape</strong>Wind assessment is grounded in long-term local measurements.</li><li><strong>Design with communities</strong>Siting balances energy value, ecology, and local priorities.</li><li><strong>Connect to the system</strong>Flexible grid resources help manage variable generation.</li></ul>
+  </template>
+  <template id="panel-storage">
+    <p class="panel-kicker">Energy storage / flexibility note</p><h2 id="drawerTitle">Keep clean<br>energy close.</h2><p>Storage shifts energy across time, helping renewable generation meet demand when the sun sets or the wind eases.</p>
+    <div class="drawer-stat"><div><strong>2–8 h</strong><span>illustrative duration range</span></div><div><strong>↔</strong><span>charge / discharge</span></div></div>
+    <ul class="drawer-list"><li><strong>Shift renewable supply</strong>Move available energy into higher-demand periods.</li><li><strong>Support grid operations</strong>Fast response can improve system flexibility.</li><li><strong>Plan for full lifecycle</strong>Consider sourcing, safety, and end-of-life recovery.</li></ul>
+  </template>
+  <template id="panel-cases">
+    <p class="panel-kicker">B2B clean-tech case studies / field notes</p><h2 id="drawerTitle">Ambition with<br>a business case.</h2><p>Explore the decisions behind a credible energy transition—from mapping demand to selecting the right mix of on-site generation, procurement, and flexibility.</p>
+    <ul class="drawer-list"><li><strong>01 / Distributed solar</strong>Match facility load profiles with practical rooftop generation.</li><li><strong>02 / Smarter operations</strong>Coordinate energy efficiency, controls, and demand response.</li><li><strong>03 / Portfolio transition</strong>Turn climate goals into a phased, measurable implementation plan.</li></ul>
+    <div class="drawer-stat"><div><strong>3 steps</strong><span>baseline · design · deliver</span></div><div><strong>1 goal</strong><span>durable clean energy value</span></div></div>
+  </template>
+  <template id="panel-menu">
+    <p class="panel-kicker">Navigate / NOVA333X</p><h2 id="drawerTitle">Explore the<br>energy atlas.</h2>
+    <div class="menu-links"><button type="button" data-panel="carbon">Live carbon offsets <span>↗</span></button><button type="button" data-panel="grid">Smart grid metrics <span>↗</span></button><button type="button" data-panel="solar">Solar output reports <span>↗</span></button><button type="button" data-panel="cases">B2B clean-tech cases <span>↗</span></button></div>
+  </template>
+  <script>
+    (() => {
+      "use strict";
+      const root = document.documentElement;
+      const preloader = document.getElementById("preloader");
+      const drawer = document.getElementById("drawer");
+      const overlay = document.getElementById("overlay");
+      const drawerContent = document.getElementById("drawerContent");
+      const menuToggle = document.getElementById("menuToggle");
+      const drawerClose = document.getElementById("drawerClose");
+      const themeToggle = document.getElementById("themeToggle");
+      let lastFocus = null;
+      let activePanel = "";
+
+      window.setTimeout(() => preloader.classList.add("done"), 520);
+
+      function setDrawerState(open, panel) {
+        const wasOpen = drawer.classList.contains("open");
+        drawer.classList.toggle("open", open);
+        overlay.classList.toggle("open", open);
+        drawer.setAttribute("aria-hidden", String(!open));
+        overlay.setAttribute("aria-hidden", String(!open));
+        menuToggle.setAttribute("aria-expanded", String(open && panel === "menu"));
+        menuToggle.setAttribute("aria-label", open && panel === "menu" ? "Close menu" : "Open menu");
+        document.body.style.overflow = open ? "hidden" : "";
+        if (!open) {
+          activePanel = "";
+          if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+          return;
+        }
+        activePanel = panel;
+        if (!wasOpen) lastFocus = document.activeElement;
+        drawerContent.replaceChildren();
+        const template = document.getElementById("panel-" + panel);
+        if (!template) {
+          closeDrawer();
+          return;
+        }
+        drawerContent.append(template.content.cloneNode(true));
+        drawerClose.focus();
+        bindSolarControl();
+      }
+
+      function openDrawer(panel) {
+        setDrawerState(true, panel);
+      }
+
+      function closeDrawer() {
+        setDrawerState(false, "");
+      }
+
+      function bindSolarControl() {
+        const slider = drawerContent.querySelector("#solarSize");
+        const value = drawerContent.querySelector("#solarSizeValue");
+        const output = drawerContent.querySelector("#solarOutput");
+        if (!slider || !value || !output) return;
+        slider.addEventListener("input", () => {
+          const kilowatts = Math.max(2, Math.min(12, Number(slider.value) || 4));
+          value.textContent = String(kilowatts);
+          output.textContent = (kilowatts * 1.2).toFixed(1) + " MWh";
+        });
+      }
+
+      document.addEventListener("click", event => {
+        const trigger = event.target.closest("[data-panel]");
+        if (!trigger) return;
+        event.preventDefault();
+        openDrawer(trigger.dataset.panel);
+      });
+      menuToggle.addEventListener("click", () => {
+        if (drawer.classList.contains("open") && activePanel === "menu") closeDrawer();
+        else openDrawer("menu");
+      });
+      drawerClose.addEventListener("click", closeDrawer);
+      overlay.addEventListener("click", closeDrawer);
+      document.addEventListener("keydown", event => {
+        if (event.key === "Escape" && drawer.classList.contains("open")) closeDrawer();
+        if (event.key !== "Tab" || !drawer.classList.contains("open")) return;
+        const focusable = drawer.querySelectorAll("button:not([disabled]), input:not([disabled]), [href], [tabindex]:not([tabindex='-1'])");
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      });
+      themeToggle.addEventListener("click", () => {
+        const nextTheme = root.dataset.theme === "light" ? "dark" : "light";
+        root.dataset.theme = nextTheme;
+        themeToggle.setAttribute("aria-label", "Switch to " + (nextTheme === "light" ? "dark" : "light") + " theme");
+        document.querySelector('meta[name="theme-color"]').setAttribute("content", nextTheme === "dark" ? "#101914" : "#f5f6ef");
+      });
+
+      function sanitizeUserInput(value) {
+        return value.replace(/[<>]/g, "").replace(/[\u0000-\u001f\u007f]/g, "").slice(0, 64).trim().toLocaleLowerCase();
+      }
+      const search = document.getElementById("storySearch");
+      const searchStatus = document.getElementById("searchStatus");
+      const storyCards = Array.from(document.querySelectorAll(".story-card"));
+      search.addEventListener("input", () => {
+        const query = sanitizeUserInput(search.value);
+        let visibleCount = 0;
+        storyCards.forEach(card => {
+          const text = (card.dataset.searchable + " " + card.textContent).toLocaleLowerCase();
+          const visible = !query || text.includes(query);
+          card.hidden = !visible;
+          if (visible) visibleCount += 1;
+        });
+        searchStatus.textContent = query ? visibleCount + (visibleCount === 1 ? " result" : " results") : "";
+      });
+
+      const counters = document.querySelectorAll("[data-count]");
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      function animateCounters() {
+        counters.forEach(counter => {
+          const target = Number(counter.dataset.count);
+          if (!Number.isFinite(target)) return;
+          if (reduceMotion) {
+            counter.textContent = String(target);
+            return;
+          }
+          const start = performance.now();
+          const duration = 1100;
+          function tick(now) {
+            const progress = Math.min(1, (now - start) / duration);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            counter.textContent = String(Math.round(target * eased));
+            if (progress < 1) requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
+        });
+      }
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(entries => {
+          if (entries.some(entry => entry.isIntersecting)) {
+            animateCounters();
+            observer.disconnect();
+          }
+        }, { threshold: .35 });
+        observer.observe(document.querySelector(".metrics-band"));
+      } else {
+        animateCounters();
+      }
+    })();
+  </script>
+</body>
+</html>
